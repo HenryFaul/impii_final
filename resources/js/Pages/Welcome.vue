@@ -1,23 +1,16 @@
 <template>
     <BreezeGuestLayout>
-        <Head title="Register" />
+        <Head title="Landing" />
         <h1 class="text-3xl text-center">Impii Connected Protection</h1>
-
         <BreezeValidationErrors class="mb-4" />
-
         <br>
         <div>
-
-            <div class="flex items-center ">
-                <BreezeButton class="ml-2" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Log in
-                </BreezeButton>
-                <BreezeButton class="ml-2" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Register
-                </BreezeButton>
-                <ButtonSOS class="ml-2" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    S.O.S
-                </ButtonSOS>
+            <div >
+                <button class="w-full h-12 px-6 text-indigo-100 mt-2 transition-colors duration-150 bg-black rounded-lg focus:shadow-outline hover:bg-indigo-800">Log in</button>
+                <br>
+                <button class="w-full h-12 px-6 text-indigo-100 mt-2 transition-colors duration-150 bg-impii rounded-lg focus:shadow-outline hover:bg-indigo-800">Register</button>
+                <br>
+                <button class="w-full h-12 px-6 text-indigo-100 mt-2 transition-colors duration-150 bg-red-500 rounded-lg focus:shadow-outline hover:bg-indigo-800">S.O.S</button>
             </div>
 
         </div>
@@ -26,8 +19,7 @@
 </template>
 
 <script setup>
-import BreezeButton from '@/Components/Button.vue';
-import ButtonSOS  from '@/Components/ButtonSOS.vue';
+
 import BreezeGuestLayout from '@/Layouts/Guest.vue';
 import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
 import { Head, useForm } from '@inertiajs/inertia-vue3';
@@ -45,5 +37,7 @@ const submit = () => {
         onFinish: () => form.reset('password', 'password_confirmation'),
     });
 };
+
+const image = "impii_logo_black.png" ;
 
 </script>
